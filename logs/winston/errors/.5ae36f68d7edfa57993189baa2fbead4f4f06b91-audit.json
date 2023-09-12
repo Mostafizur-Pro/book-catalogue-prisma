@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\Mostafizur Rahman\\Project_Programming\\Level 2\\Assignment 8\\Book-catalogue\\logs\\winston\\errors\\.5ae36f68d7edfa57993189baa2fbead4f4f06b91-audit.json",
+    "files": [
+        {
+            "date": 1694541370563,
+            "name": "D:\\Mostafizur Rahman\\Project_Programming\\Level 2\\Assignment 8\\Book-catalogue\\logs\\winston\\errors\\phu-2023-12-09-23-error.log",
+            "hash": "3a714c9b47545f7987335763a62df2ee08521c94c69d21454e99391133f0fdc3"
+        },
+        {
+            "date": 1694541731056,
+            "name": "D:\\Mostafizur Rahman\\Project_Programming\\Level 2\\Assignment 8\\Book-catalogue\\logs\\winston\\errors\\phu-2023-13-09-00-error.log",
+            "hash": "4aaaa919d2bdbd807e34cfc8378021538622dd31162dd405cf12dcc4f88501d0"
+        }
+    ],
+    "hashType": "sha256"
+}

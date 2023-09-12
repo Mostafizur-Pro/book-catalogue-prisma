@@ -1,0 +1,18 @@
+{
+    "builds": [
+      {
+        "src": "vercel",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/.*",
+        "dest": "vercel/api.js"
+      }
+    ],
+    "env": {
+      "DATABASE_URL": "process.env.DATABASE_URL"
+    }
+  }
+  
