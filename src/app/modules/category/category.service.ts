@@ -28,22 +28,36 @@ const getCategoryById = async ( categoryId: string ): Promise<Category> => {
     return category;
 };
 
-const createCategory = async (payload: Category): Promise<Category> => {
+// const createCategory = async (payload: Category): Promise<Category> => {
 
     
-  const isExist = await prisma.category.findFirst({
-    where: {
-      title: payload.title,
-    },
-  });
-  if (isExist) {
-    throw new Error('Category already exists');
-  }
-  const category = await prisma.category.create({
-    data: payload,
-  });
-  return category;
-};
+//   const isExist = await prisma.category.findFirst({
+//     where: {
+//       title: payload.title,
+//     },
+//   });
+//   if (isExist) {
+//     throw new Error('Category already exists');
+//   }
+//   const category = await prisma.category.create({
+//     data: payload,
+//   });
+//   return category;
+// };
+const createCategory = async (payload: Category): Promise<Category> => {
+    const isExist = await prisma.category.findFirst({
+      where: {
+        title: payload.title,
+      },
+    });
+    if (isExist) {
+      throw new Error('Category already exists');
+    }
+    const category = await prisma.category.create({
+      data: payload,
+    });
+    return category;
+  };
 
 const updateCategoryById = async ( categoryId: string, payload: Partial<Category> ): Promise<Category> => {
     // handle duplicate data in existing categories (title) in database

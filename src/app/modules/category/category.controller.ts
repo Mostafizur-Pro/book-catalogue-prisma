@@ -31,19 +31,31 @@ const getCategoryById = catchAsync(async (req:Request, res: Response):Promise<Ca
     return category;
 });
 
-const createCategory = catchAsync(async (req:Request, res: Response):Promise<Category> => {
-    const category = await CategoryService.createCategory(req.body);
+// const createCategory = catchAsync(async (req:Request, res: Response):Promise<Category> => {
+//     const category = await CategoryService.createCategory(req.body);
     
-    sendResponse( res, {
-        statusCode: httpStatus.CREATED,
-        success: true,
-        message: 'Category created successfully',
-        data: category
+//     sendResponse( res, {
+//         statusCode: httpStatus.CREATED,
+//         success: true,
+//         message: 'Category created successfully',
+//         data: category
+//     });
+
+//     return category;
+// });
+
+const createCategoryController = catchAsync(async (req: Request, res: Response): Promise<Category> => {
+    const category = await CategoryService.createCategory(req.body);
+  
+    sendResponse(res, {
+      statusCode: httpStatus.CREATED,
+      success: true,
+      message: 'Category created successfully',
+      data: category,
     });
-
+  
     return category;
-});
-
+  });
 const updateCategoryById = catchAsync(async (req:Request, res: Response):Promise<Category> => {
     const categoryId = req.params.id;
     const payload = req.body;
@@ -77,7 +89,7 @@ const deleteCategoryById = catchAsync(async (req:Request, res: Response):Promise
 export const CategoryController = {
     getAllCategories,
     getCategoryById,
-    createCategory,
+    createCategoryController,
     updateCategoryById,
     deleteCategoryById
 };

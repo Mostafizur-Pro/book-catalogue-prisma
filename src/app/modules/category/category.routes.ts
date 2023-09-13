@@ -9,12 +9,27 @@ import validateRequest from '../../middlewares/validateRequest';
 const router = express.Router();
 router.get('/', CategoryController.getAllCategories);
 router.get('/:id', CategoryController.getCategoryById);
+// router.post(
+//   '/create-category',
+  
+//   validateRequest(CategoryValidation.zodValidation),
+//   CategoryController.createCategory
+// );
 router.post(
   '/create-category',
-  
   validateRequest(CategoryValidation.zodValidation),
-  CategoryController.createCategory
+  CategoryController.createCategoryController
+
 );
+
+
+
+
+
+
+
+
+
 router.patch(
   '/:id',
   
